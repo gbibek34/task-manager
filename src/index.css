@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Sidebar */
+
+.sidebar {
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 300px;
+  padding: 5px 15px;
+
+  transition: all 0.4s ease;
+
+  background: #f8f8f8;
+}
+
+.logospace {
+  font-size: 26px;
+  font-weight: 800;
+
+  padding: 20px;
+
+  text-align: center;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: row;
+
+  margin: 10px 0px;
+  padding: 12px 25px;
+
+  transition: ease-in-out 0.1s;
+  text-decoration: none;
+
+  color: #000;
+  border-radius: 8px;
+}
+
+.nav-item:hover {
+  cursor: pointer;
+
+  opacity: .5;
+}
+
+.active {
+  color: #fff;
+  background: #000;
+}
+
+.nav-item-name {
+  margin-left: 20px;
+}
+
+/* Main Container */
+
+.container {
+  left: 300px;
+
+  width: calc(100% - 300px);
+
+  /* height: 100%; */
+}
+
+/* Page Headers */
+
+.header {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+
+  padding: 20px;
+
+  border-bottom: 3px rgb(220, 220, 220) solid;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.content {
+  padding: 20px;
+
+  /* background: #e54a4a; */
+}
+
+/* Dashboard */
+
+.task-card {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+
+  padding: 20px;
+
+  /* background: #b36666; */
+}
+
+.task-details {
+  margin-left: 20px;
+}
+
+.task-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.task-datetime {
+  font-size: 12px;
+
+  color: gray;
+}
+
+/* Calendar */
+
+.calendar-section {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Profile */
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.profile-picture {
+  width: 200px;
+  height: 200px;
+}
+
+.profile-picture img {
+  width: 200px;
+  height: 200px;
+
+  border: 3px gray solid;
+  border-radius: 100px;
+
+  object-fit: cover;
+}
+
+.fullname {
+  font-size: 26px;
+  font-weight: 800;
+
+  padding: 20px;
+}
+
+.username,
+.email {
+  font-size: 22px;
+  font-weight: 600;
+
+  color: gray;
+}
