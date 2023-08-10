@@ -2,16 +2,15 @@ import dayjs from "dayjs";
 import { useEffect, useState } from "react";
 import TaskCard from "../components/TaskCard";
 
-const Dashboard = ({ tasks }) => {
-
-    const [todayTasks, setTodayTasks] = useState([])
+const Upcoming = ({ tasks }) => {
+    const [upcomingTasks, setUpcomingTasks] = useState([])
 
     useEffect(() => {
         const today = dayjs()
         if (tasks) {
-            setTodayTasks(tasks.filter(task => {
+            setUpcomingTasks(tasks.filter(task => {
                 const taskDate = dayjs(task.dueDate);
-                return taskDate.isSame(today, 'day') && task.status === 'Incomplete';
+                return taskDate.isAfter(today, 'day') && task.status === 'Incomplete';
             }))
         }
     }, [tasks])
@@ -20,12 +19,12 @@ const Dashboard = ({ tasks }) => {
         <>
             <div className="header">
                 <div className="page-title">
-                    Today's Tasks
+                    Upcoming Tasks
                 </div>
             </div>
             <div>
                 <div className="task-section">
-                    {todayTasks.map((task) => (
+                    {upcomingTasks.map((task) => (
                         <TaskCard key={task.id} task={task} />
                     ))}
 
@@ -35,4 +34,4 @@ const Dashboard = ({ tasks }) => {
     )
 }
 
-export default Dashboard
+export default Upcoming
